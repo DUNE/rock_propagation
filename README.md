@@ -8,7 +8,7 @@ Code to propagate GENIE reaction products in GEANT and then stuff them back into
 
 Classes + executable project that propagates GHEP particles from a genie event record through a world geometry in geant4.  Particles which enter a volume with name 'volDetEnclosure'  or 'volDetector' have their state saved back into the genie GHEP event record and are recorded as a kIStStableFinalState.  The idea is that these GHEP event records could be passed to a different geant4 tracker downstream and these particles would have their tracking continue from the point that they entered the detector cavern.
 
-# compiling
+## compiling
 
 *Setup and building instructions are for Fermilab dunegpvm nodes*
 
