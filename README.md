@@ -30,3 +30,4 @@ To setup the compiled project after logging back in
 ## running
 
     $ runRockPropagation -f path/to/ghep_file.root -o output_name_prefix -g /path/to/geometry.gdml -s random_seed_number -n nevents_to_process
+
