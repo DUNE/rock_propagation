@@ -1,15 +1,12 @@
 # rock_propagation
 
-
-Code to propagate GENIE reaction products in GEANT and then stuff them back into a GENIE record when they cross a particular boundary. This code is useful for simulating rock events in DUNE. There are two programs:
-* runRockPropagation: *This code is the original work of Dom Brailsford, perhaps with help/advice from Robert Hatcher.*
-* gntpc_dune
+Code to propagate GENIE reaction products in GEANT and then stuff them back into a GENIE record when they cross a particular boundary. This code is useful for simulating rock events in DUNE. 
 
 ## Overview
 
-**runRockProagation:** Consists of classes + executable project that propagates GHEP particles from a genie event record through a world geometry in geant4.  Particles which enter a volume with name `volDetEnclosure`  or `volDetector` have their state saved back into the genie GHEP event record and are recorded as a kIStStableFinalState.  The idea is that these GHEP event records can be passed to a different Geant4 tracker downstream and these particles would have their tracking continue from the point that they entered the detector cavern.
+**runRockPropagation:** Consists of classes + executable project that propagates GHEP particles from a genie event record through a world geometry in geant4.  Particles which enter a volume with name `volDetEnclosure`  or `volDetector` have their state saved back into the genie GHEP event record and are recorded as a kIStStableFinalState.  The idea is that these GHEP event records can be passed to a different Geant4 tracker downstream and these particles would have their tracking continue from the point that they entered the detector cavern. *This code is the original work of Dom Brailsford, perhaps with help/advice from Robert Hatcher.*
 
-**gntpc_dune:** A lightly modified version of the GENIE `gntpc` program useful for use with the output of the rock propagation. The issue is that the output events can be larger than static arrays in `gntpc's` `rootracker` output, causing gntpc to SEGV. This program issues a warning when it encouters such large events and aborts, unless the user sets a commandline option `-t` to truncate them.
+**gntpc_dune:** A lightly modified version of the GENIE `gntpc` program useful for use with the output of the rock propagation. The issue is that the output events can be larger than static arrays in `gntpc's` `rootracker` output, causing `gntpc` to SEGV. This program issues a warning when it encouters such large events and aborts, unless the user sets a commandline option `-t` to truncate them.
 
 ## compiling
 
