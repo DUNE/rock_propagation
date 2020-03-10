@@ -1,5 +1,20 @@
 cmake_minimum_required(VERSION 3.00)
 project (RockPropGENIE)
+
+if( CMAKE_INSTALL_PREFIX STREQUAL "/usr/local" )
+  set( CMAKE_INSTALL_PREFIX "${PROJECT_SOURCE_DIR}" )
+endif()
+
+# write this variable to cache
+set( CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}" CACHE PATH "Where to install ${PROJECT_NAME}" FORCE )
+
+set( CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/lib" )
+mark_as_advanced( CMAKE_INSTALL_RPATH )
+
+#append link pathes to rpath list
+set( CMAKE_INSTALL_RPATH_USE_LINK_PATH 1 )
+mark_as_advanced( CMAKE_INSTALL_RPATH_USE_LINK_PATH )
+
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
 set(LIBRARY_OUTPUT_PATH "${CMAKE_BINARY_DIR}/lib")
 set(EXECUTABLE_OUTPUT_PATH "${CMAKE_BINARY_DIR}/bin")
