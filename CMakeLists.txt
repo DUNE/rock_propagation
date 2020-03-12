@@ -55,5 +55,5 @@ include_directories("$ENV{LIBXML2_INC}")
 find_package(Geant4 REQUIRED)
 include(${Geant4_USE_FILE})
 
-include_directories(${ROCKPROP_SRC_DIR})
+include_directories( BEFORE include )
 add_subdirectory(src)
