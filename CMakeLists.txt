@@ -1,6 +1,13 @@
 cmake_minimum_required(VERSION 3.00)
 project (RockPropGENIE)
 
+if( NOT CMAKE_BUILD_TYPE )
+  set( CMAKE_BUILD_TYPE Debug CACHE STRING
+       "Choose the type of build, options are: None Debug Release RelWithDebInfo
+MinSizeRel."
+       FORCE )
+endif()
+
 if( CMAKE_INSTALL_PREFIX STREQUAL "/usr/local" )
   set( CMAKE_INSTALL_PREFIX "${PROJECT_SOURCE_DIR}" )
 endif()
@@ -15,10 +22,10 @@ mark_as_advanced( CMAKE_INSTALL_RPATH )
 set( CMAKE_INSTALL_RPATH_USE_LINK_PATH 1 )
 mark_as_advanced( CMAKE_INSTALL_RPATH_USE_LINK_PATH )
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
+# set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
 set(LIBRARY_OUTPUT_PATH "${CMAKE_BINARY_DIR}/lib")
 set(EXECUTABLE_OUTPUT_PATH "${CMAKE_BINARY_DIR}/bin")
-set (ROCKPROP_SRC_DIR "${PROJECT_SOURCE_DIR}/src")
+set(ROCKPROP_SRC_DIR "${PROJECT_SOURCE_DIR}/src")
 
 find_package(ROOT REQUIRED COMPONENTS Core RIO Hist Tree Rint XMLIO Geom Physics EGPythia6 GenVector)
 include(${ROOT_USE_FILE})
