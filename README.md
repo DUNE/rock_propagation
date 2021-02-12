@@ -1,6 +1,6 @@
 # rock_propagation
 
-[![Build Status](https://travis-ci.org/ebrianne/rock_propagation.svg?branch=master)](https://travis-ci.org/ebrianne/rock_propagation)
+![linux](https://github.com/ebrianne/rock_propagation/workflows/linux/badge.svg)
 
 Code to propagate GENIE reaction products in GEANT and then stuff them back into a GENIE record when they cross a particular boundary. This code is useful for simulating rock events in DUNE.
 
