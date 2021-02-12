@@ -8,3 +8,10 @@ setup genie_xsec   v2_12_10      -q DefaultPlusValenciaMEC
 setup genie_phyopt v2_12_10      -q dkcharmtau
 setup geant4       v4_10_3_p01b  -q e15:prof
 setup cmake        v3_14_3
+
+cd /Package
+mkdir build
+cd build
+cmake -GNinja -DCMAKE_CXX_FLAGS="-fdiagnostics-color=always" .. && \
+ninja && \
+ninja install
