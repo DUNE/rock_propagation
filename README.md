@@ -1,6 +1,8 @@
 # rock_propagation
 
-Code to propagate GENIE reaction products in GEANT and then stuff them back into a GENIE record when they cross a particular boundary. This code is useful for simulating rock events in DUNE. 
+![linux](https://github.com/ebrianne/rock_propagation/workflows/linux/badge.svg)
+
+Code to propagate GENIE reaction products in GEANT and then stuff them back into a GENIE record when they cross a particular boundary. This code is useful for simulating rock events in DUNE.
 
 ## Overview
 
@@ -16,7 +18,7 @@ The CMAKE project relies on GENIE and Geant4, as setup by the UPS system at FNAL
 
 To compile
 1) Setup cmake, geant4 and genie ups products
-2) $ source setup_rockprop.sh 
+2) $ source setup_rockprop.sh
 3) $ cd build
 4) $ cmake ../
 5) $ make
@@ -30,4 +32,3 @@ To setup the compiled project after logging back in
 ## running
 
     $ runRockPropagation -f path/to/ghep_file.root -o output_name_prefix -g /path/to/geometry.gdml -s random_seed_number -n nevents_to_process
-
